@@ -8,28 +8,28 @@ public class Teacher {
 	private int numberOfSubjects;
 	List<Mark> marks;
 
-	public Grades generateGrade(List<Mark> marks) {
+	public Grade generateGrade(List<Mark> marks) {
 		this.marks = marks;
 
-		BigDecimal percentage = calculatePercent();
+		BigDecimal average = calculateAverage();
 
-		if (percentage.compareTo(new BigDecimal("90.00")) > 0) {
-			return Grades.Excellent;
+		if (average.compareTo(new BigDecimal("90.00")) > 0) {
+			return Grade.Excellent;
 		}
 
-		if (percentage.compareTo(new BigDecimal("75.00")) > 0) {
-			return Grades.VeryGood;
+		if (average.compareTo(new BigDecimal("75.00")) > 0) {
+			return Grade.VeryGood;
 		}
 
-		if (percentage.compareTo(new BigDecimal("60.00")) > 0) {
-			return Grades.Good;
+		if (average.compareTo(new BigDecimal("60.00")) > 0) {
+			return Grade.Good;
 		}
 
-		if (percentage.compareTo(new BigDecimal("40.00")) > 0) {
-			return Grades.Average;
+		if (average.compareTo(new BigDecimal("40.00")) > 0) {
+			return Grade.Average;
 		}
 
-		return Grades.Poor;
+		return Grade.Poor;
 	}
 
 	private BigDecimal getAggregatedMarks() {
@@ -49,10 +49,9 @@ public class Teacher {
 		this.numberOfSubjects = size;
 	}
 
-	private BigDecimal calculatePercent() {
+	private BigDecimal calculateAverage() {
 
-		BigDecimal percent = new BigDecimal(getAggregatedMarks().doubleValue() / getNumberOfSubjects());
-		return percent;
+		return new BigDecimal(getAggregatedMarks().doubleValue() / getNumberOfSubjects());
 	}
 
 	public int getNumberOfSubjects() {

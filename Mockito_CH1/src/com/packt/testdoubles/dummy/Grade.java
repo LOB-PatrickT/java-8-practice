@@ -1,5 +1,5 @@
 package com.packt.testdoubles.dummy;
 
-public enum Grades {
+public enum Grade {
 	Excellent, VeryGood, Good, Average, Poor;
 }

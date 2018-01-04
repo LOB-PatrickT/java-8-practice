@@ -3,11 +3,11 @@ package com.packt.testdoubles.dummy;
 
 /**
  * @author P100X1
- *
+ * For creating dummy object
  */
 public class DummyStudent extends Student{
 	
-	protected DummyStudent() {
+	public DummyStudent() {
 		super(null, null);
 	}
 	
