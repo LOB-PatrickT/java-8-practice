@@ -1,5 +1,10 @@
 package com.packt.testdoubles.dummy;
 
+
+/**
+ * @author P100X1
+ *
+ */
 public class DummyStudent extends Student{
 	
 	protected DummyStudent() {
