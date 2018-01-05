@@ -17,6 +17,7 @@ public class StudentService {
 		this.spy =spy;
 	}
 	
+	
 	public void enrollToCourse(String courseName, Student student) {
 		
 		registerStudentServiceMethodCall(courseName, student, "enrollToCourse");
@@ -27,7 +28,7 @@ public class StudentService {
 		
 	}
 	
-	private void registerStudentServiceMethodCall(String courseName, Student student, String methodName) {
+	protected void registerStudentServiceMethodCall(String courseName, Student student, String methodName) {
 		
 		MethodInvocation invocation = new MethodInvocation();
 		invocation.addParam(courseName).addParam(student).setMethod(methodName);
@@ -35,7 +36,7 @@ public class StudentService {
 		
 	}
 
-	private List<Student> retrieveStudentsFromCourseMap(String courseName) {
+	protected List<Student> retrieveStudentsFromCourseMap(String courseName) {
 		
 		students = studentCouseMap.get(courseName);
 		if (students == null) {
@@ -45,7 +46,7 @@ public class StudentService {
 		
 	}
 
-	private void addStudentToList(Student student) {
+	protected void addStudentToList(Student student) {
 		
 		if (!students.contains(student)) {
 			students.add(student);
