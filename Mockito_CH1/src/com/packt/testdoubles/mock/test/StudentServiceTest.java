@@ -1,5 +1,7 @@
 package com.packt.testdoubles.mock.test;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import com.packt.testdoubles.dummy.Student;
@@ -24,7 +26,7 @@ public class StudentServiceTest {
 		service.enrollToCourse("history", roy);
 
 		// assert that the method was invoked twice
-		assertEquals(2, mockObject.invocation("enrollToCourse"));
+		assertEquals(2, mockObject.getNumberOfMethodInvocation("enrollToCourse"));
 
 		// verify wrong information, that enrollToCourse was //invoked once, but
 		// actually it is invoked twice
