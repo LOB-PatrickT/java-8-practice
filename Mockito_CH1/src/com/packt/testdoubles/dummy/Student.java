@@ -9,6 +9,14 @@ public class Student {
 		this.roleNumber = roleNumber;
 		this.name = name;
 	}
+
+	public String getRoleNumber() {
+		return roleNumber;
+	}
+
+	public String getName() {
+		return name;
+	}
 	
 
 }
